@@ -3,6 +3,8 @@ package com.bilgeadam.repository.entity;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -14,7 +16,9 @@ import java.util.Set;
 @Entity
 @SuperBuilder(toBuilder = true)
 public class Student extends Person{
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    @Generated(GenerationTime.INSERT)
+    @Column(columnDefinition = "bigserial")
     private long registrationId;
     private long registrationDate;
     @ManyToMany

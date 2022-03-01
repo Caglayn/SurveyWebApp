@@ -13,7 +13,8 @@ import java.util.Set;
 @Entity
 public class Topic {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "sq_topic_id", sequenceName = "sq_topic_id", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(generator = "sq_topic_id")
     private long id;
     private String topicCode;
     private String name;

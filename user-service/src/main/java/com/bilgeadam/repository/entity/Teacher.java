@@ -2,6 +2,8 @@ package com.bilgeadam.repository.entity;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.GenerationTime;
+import org.hibernate.annotations.Generated;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -13,7 +15,8 @@ import java.util.Set;
 @SuperBuilder(toBuilder = true)
 @Entity
 public class Teacher extends Employee{
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Generated(GenerationTime.INSERT)
+    @Column(columnDefinition = "bigserial")
     private long teacherId;
     private int yearsOfexperience;
 

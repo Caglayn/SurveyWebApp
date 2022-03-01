@@ -14,6 +14,8 @@ import java.util.Set;
 @Table(name = "branch")
 public class Branch {
     @Id
+    @SequenceGenerator(name = "sq_branch_id", sequenceName = "sq_branch_id", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(generator = "sq_branch_id")
     private long id;
     private String name;
     private String address;

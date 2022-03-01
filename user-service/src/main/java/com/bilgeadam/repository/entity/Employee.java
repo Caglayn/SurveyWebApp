@@ -2,6 +2,8 @@ package com.bilgeadam.repository.entity;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.GenerationTime;
+import org.hibernate.annotations.Generated;
 
 import javax.persistence.*;
 
@@ -12,6 +14,7 @@ import javax.persistence.*;
 @Entity
 @SuperBuilder(toBuilder = true)
 public class Employee extends Person{
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Generated(GenerationTime.INSERT)
+    @Column(columnDefinition = "bigserial")
     private long employeeId;
 }

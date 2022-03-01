@@ -13,7 +13,8 @@ import java.util.Set;
 @Entity
 public class Course {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "sq_course_id", sequenceName = "sq_course_id", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(generator = "sq_course_id")
     private long id;
     private String courseCode;
     private String name;

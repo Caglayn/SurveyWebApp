@@ -14,6 +14,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 public abstract class Person {
     @Id
+    @SequenceGenerator(name = "sq_person_id", sequenceName = "sq_person_id", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(generator = "sq_person_id")
     private long id;
     private long idNumber;
     private String firstname;

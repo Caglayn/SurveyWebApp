@@ -2,6 +2,7 @@ package com.bilgeadam.repository.entity;
 
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -11,8 +12,9 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@SuperBuilder(toBuilder = true)
 public class Student extends Person{
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long registrationId;
     private long registrationDate;
     @ManyToMany

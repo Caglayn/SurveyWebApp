@@ -1,6 +1,7 @@
 package com.bilgeadam.repository.entity;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 
@@ -8,6 +9,9 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Getter
 @Setter
+@SuperBuilder(toBuilder = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public abstract class Person {
     @Id
     private long id;

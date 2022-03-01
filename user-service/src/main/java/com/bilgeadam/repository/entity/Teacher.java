@@ -1,6 +1,7 @@
 package com.bilgeadam.repository.entity;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -9,7 +10,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@SuperBuilder(toBuilder = true)
 @Entity
 public class Teacher extends Employee{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
